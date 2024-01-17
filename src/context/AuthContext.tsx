@@ -63,7 +63,7 @@ export const INITIAL_USER = {
       const cookieFallback = localStorage.getItem("cookieFallback");
   
       if (
-        cookieFallback === "[]"
+        cookieFallback === "[]" || cookieFallback===null
       ) {
         navigate("/sign-in");
         // location.reload();
