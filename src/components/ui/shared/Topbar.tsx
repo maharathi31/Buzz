@@ -20,8 +20,8 @@ const Topbar = () => {
       <img
       src="/assets/images/logo.svg"
       alt="logo"
-      width={45}
-      height={25}/>
+      width={55}
+      height={35}/>
     </Link>
     <div className="flex gap-4">
       <Button variant="ghost" className="shad-button_ghost"
