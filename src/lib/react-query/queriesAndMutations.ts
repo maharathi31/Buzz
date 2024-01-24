@@ -165,6 +165,7 @@ export const useLikePost = () => {
     return useInfiniteQuery({
       queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
       queryFn: getInfinitePosts as any,
+      initialPageParam:undefined,
       getNextPageParam: (lastPage: any) => {
         // If there's no data, there are no more pages.
         if (lastPage && lastPage.documents.length === 0) {
