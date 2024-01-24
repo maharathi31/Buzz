@@ -174,8 +174,7 @@ export const useLikePost = () => {
         // Use the $id of the last document as the cursor.
         const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
         return lastId;
-      },
-      initialPageParam: 1,
+      }
     });
   };
 
