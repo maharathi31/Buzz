@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Models } from "appwrite";
-import { useLocation } from "react-router-dom";
 import { useDeleteSavedPost, useGetCurrentUser, useLikePost, useSavePost } from "../../../lib/react-query/queriesAndMutations";
-import { useUserContext } from "../../../context/AuthContext";
 import { checkIsLiked } from "../../../lib/utils";
 
 type PostStatsProps = {
@@ -12,7 +10,6 @@ type PostStatsProps = {
   
   const PostStats = ({ post, userId }: PostStatsProps) => {
 
-    const location = useLocation();
     const likesList = post.likes.map((user: Models.Document) => user.$id);
 
     const [likes, setLikes] = useState<string[]>(likesList);
@@ -23,10 +20,6 @@ type PostStatsProps = {
     const { mutate: deleteSavePost } = useDeleteSavedPost();
   
     const { data: currentUser } = useGetCurrentUser();
-
-    const containerStyles = location.pathname.startsWith("/profile")
-    ? "w-full"
-    : "";
 
     const savedPostRecord = currentUser?.save.find(
         (record: Models.Document) => record.post.$id === post.$id

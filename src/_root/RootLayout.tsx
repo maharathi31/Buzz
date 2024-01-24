@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Bottombar from "../components/ui/shared/Bottombar";
 import LeftSidebar from "../components/ui/shared/LeftSidebar";

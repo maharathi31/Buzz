@@ -1,4 +1,3 @@
-import * as React from "react";
 import {createContext,useContext,useEffect,useState} from "react";
 import { getCurrentUser } from "../lib/appwrite/api";
 import { IContextType, IUser } from "../types/index";

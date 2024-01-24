@@ -1,4 +1,3 @@
-import React from "react";
 import {Models} from "appwrite"
 import {Link} from "react-router-dom"
 import { getRelativeTime } from "../../../lib/utils";
@@ -50,26 +49,11 @@ const PostCard = ({post}:PostCardProps) => {
             ))}
           </ul>
         </div>
-        {post.isVideo ? (
-          <video
-            ref={videoRef}
-            className="post-card_img"
-            controls={false}
-            loop={true}
-            autoPlay={true}
-            muted={true}
-            autoFocus={true}
-          >
-            <source src={modifiedVideoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        ) : (
           <img
             src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
             className="post-card_img"
             alt="post image"
           />
-        )}
       </Link>
       <PostStats post={post} userId={user.id} />
     </div>
